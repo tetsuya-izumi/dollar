@@ -2,9 +2,12 @@ let price1 = 100;
 let price2 = 1234;
 let price3 = 12345678912345;
 
-let jpy_price1 = price1.toLocaleString('ja-JP', {style:'currency', currency: 'JPY'});
-let jpy_price2 = price1.toLocaleString('ja-JP', {style:'currency', currency: 'JPY'});
-let jpy_price3 = price1.toLocaleString('ja-JP', {style:'currency', currency: 'JPY'});
+jpy_price1 = new Intl.NumberFormat().format(price1);
+jpy_price1 = new Intl.NumberFormat().format(price2);
+
+let jpy_price1 = price1.toLocaleString('ja-JP', {style:'currency', currency: 'JPY', minimumFractionDigits: 2});
+let jpy_price2 = price1.toLocaleString('ja-JP', {style:'currency', currency: 'JPY', minimumFractionDigits: 2});
+let jpy_price3 = price1.toLocaleString('ja-JP', {style:'currency', currency: 'JPY', minimumFractionDigits: 5});
 
 let usd_price1 = price1.toLocaleString('en-US', {style:'currency', currency: 'USD'});
 let usd_price2 = price2.toLocaleString('en-US', {style:'currency', currency: 'USD'});
